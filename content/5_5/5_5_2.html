@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Quasi-Newton Methods &#8212; Nonlinear optimization Chapter</title>
+    <title>Portfolio Construction (Bertsimas et al. 1999) &#8212; Nonlinear optimization Chapter</title>
   
   
   
@@ -57,13 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/5_2/5_2_4';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/5_5/5_5_2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Constrained Optimization" href="../5_3/5_3_0.html" />
-    <link rel="prev" title="Newton’s Method" href="5_2_3.html" />
+    <link rel="next" title="Balancing Rotor Systems (Chen et al. 1991)" href="5_5_3.html" />
+    <link rel="prev" title="Illustrative Applications" href="5_5_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,14 +179,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../5_1/5_1_1.html"><strong>Preliminary Notation and Concepts</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.2</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="5_2_0.html"><strong>Unconstrained Optimization</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_1.html"><strong>One-Dimensional Search</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_1_1.html"><strong>One-Dimensional Search Algorithm</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_2.html"><strong>Multivariable Search: Gradient Method</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_2_1.html"><strong>Multivariable Gradient Search</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_3.html"><strong>Newton’s Method</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Quasi-Newton Methods</strong></a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_0.html"><strong>Unconstrained Optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1.html"><strong>One-Dimensional Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1_1.html"><strong>One-Dimensional Search Algorithm</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2.html"><strong>Multivariable Search: Gradient Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2_1.html"><strong>Multivariable Gradient Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_3.html"><strong>Newton’s Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_4.html"><strong>Quasi-Newton Methods</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.3</span></p>
 <ul class="nav bd-sidenav">
@@ -203,10 +201,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../5_4/5_4_0.html"><strong>Software for Nonlinear Optimization</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.5</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_1.html"><strong>Illustrative Applications</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_2.html"><strong>Portfolio Construction (Bertsimas et al. 1999)</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_3.html"><strong>Balancing Rotor Systems (Chen et al. 1991)</strong></a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="5_5_1.html"><strong>Illustrative Applications</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Portfolio Construction (Bertsimas et al. 1999)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_5_3.html"><strong>Balancing Rotor Systems (Chen et al. 1991)</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.6</span></p>
 <ul class="nav bd-sidenav">
@@ -268,7 +266,7 @@
       
       
       
-      <li><a href="../../_sources/content/5_2/5_2_4.md" target="_blank"
+      <li><a href="../../_sources/content/5_5/5_5_2.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +348,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quasi-Newton Methods</h1>
+    <h1>Portfolio Construction (Bertsimas et al. 1999)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -364,11 +362,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="quasi-newton-methods">
-<h1><strong>Quasi-Newton Methods</strong><a class="headerlink" href="#quasi-newton-methods" title="Link to this heading">#</a></h1>
-<p>The computational demands of repeatedly invert[ing] the n x n Hessian matrix H motivated the development of a large number of modifications to the original Newton’s method. These modifications differ from one another primarily in the way that the second derivatives are approximated from one iteration to the next.</p>
-<p>These <strong>Quasi-Newton methods</strong> begin with an arbitrary negative definite approximation to H, or its inverse, and through a succession of improvements, eventually converge to the true matrix H. For example, the methods could begin with H = -I, a negative identity matrix at some initial point, <span class="math notranslate nohighlight">\(x^0\)</span>. The Newton direction corresponds to a simple gradient direction. We first perform a line search to get a new point, <span class="math notranslate nohighlight">\(x^1\)</span>. Then, based on the new point and the function value, we perform a rank 1 update to the matrix H (and H<span class="math notranslate nohighlight">\(^{-1}\)</span>) which fits the current points with a quadratic. In so doing, we <em>correct</em> the estimate of H in one dimension, but we also maintain a negative definite approximation. This process is repeated using the new estimate of H to perform a line search and get a new maximum at <span class="math notranslate nohighlight">\(x^2\)</span>. After n iterations an a negative definite quadratic function, the approximation is exact.</p>
-<p>The first such method was introduced by Davidon (1959), and shortly thereafter was improved upon by Fletcher and Powell (1963). The combined technique was known as the <strong>DFP method</strong>. A few years later, minor variations were proposed independently by Broyden (1970), Fletcher (1970), Goldfarb (1969), and Shanno (1970) and these became known collectively as the <strong>BFGS update formula</strong>. This is the method upon which almost all commercial software for nonlinear unconstrained optimization is based. The mathematical foundations and the precise formula typically used for updating the Hessian matrix is given in Beale (1959) and Avriel (1976).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="portfolio-construction-bertsimas-et-al-1999">
+<h1><strong>Portfolio Construction (Bertsimas et al. 1999)</strong><a class="headerlink" href="#portfolio-construction-bertsimas-et-al-1999" title="Link to this heading">#</a></h1>
+<p>A large investment firm in Boston manages assets in excess of $26 billion, for clients that include pension funds, foundations, educational endowments, and several leading investment institutions. This firm employed the widely used classical theory of portfolio optimization (Markowitz 1959), in which managers determine the proportion of total assets to invest in each available investment to minimize risk (variability of return) subject to constraints that require the expected total return to meet a certain target. This famous model includes an objective that is a quadratic function of the decision variables and constraints that are linear.<br>
+For a variety of reasons, large clients typically subdivide their asset classes and allow each portion to be managed by different analysts who have distinctly unique investment styles. This strategy ensures that the composite return will be a linear combination of the returns resulting from the different investment styles. Because this linear diversification approach is generally accepted by clients, the investment firm applies the technique within its individual funds. Portfolios are partitioned into subportfolios, each characterized by a different investment style. Quadratic optimization can still be used for the multiple subportfolio problem, but the number of decision variables increases dramatically because each subportfolio can conceivably invest in any of the securities available to the composite portfolio. (One of the firm’s funds is partitioned into 50 subportfolios.)A notable advantage of this partitioned portfolio framework is the ability to reduce trading costs by swapping shares internally among subportfolios, thereby often avoiding the costs of trading on the open market. Globally optimizing multiple subportfolios thus makes it possible to sharply increase the turnover within each subportfolio without necessarily increasing turnover for the composite portfolio. This portfolio construction methodology produces funds with good performance, high liquidity, relatively low turnover, use of multiple investment styles, and diversification over time.<br>
+The desired diversification that is achieved through multiple subportfolios unfortunately gives rise to certain complications that are not handled within the standard quadratic programming model. With risk management through diversification, the number of different stocks (or other investments) in the portfolio becomes very large, and as the portfolio is rebalanced over time, the number of transactions also grows, resulting in increased custodial fees and transaction costs. These phenomena can sometimes be dealt with by adding a post-processing step to the quadratic optimization phase, simply to prohibit positions and trades smaller than a given threshold. But this firm’s strategy specifically included investing in small market capitalization stocks, so merely eliminating small positions would be inconsistent with established investment criteria. Additionally, post-processing that eliminates many small but key positions can interfere with optimization objectives and can violate constraints.<br>
+On the basis of these considerations, the investment firm decided to modify its quadratic optimization approach so that it could simultaneously optimize its multiple subportfolios <em>and</em> maintain control over the number of positions and transactions in the composite portfolio. These stock position levels and transaction counts are inherently integer-valued quantities, and the quadratic model therefore had to be expanded to include integer components, resulting in a mixed-integer programming model. The solution was implemented using ILOG CPLEX 4.0 as the underlying mixed-integer solver. The mixed integer solution allowed the firm to reduce its average number of different holdings by approximately 50%, and its average number of transactions by about 80%, significantly decreasing its operational costs and trading costs while maintaining essentially the same originally targeted expected returns on investment.<br></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -384,7 +383,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/5_2"
+            path: "./content/5_5"
         },
         predefinedOutput: true
     }
@@ -402,20 +401,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="5_2_3.html"
+       href="5_5_1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><strong>Newton’s Method</strong></p>
+        <p class="prev-next-title"><strong>Illustrative Applications</strong></p>
       </div>
     </a>
     <a class="right-next"
-       href="../5_3/5_3_0.html"
+       href="5_5_3.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Constrained Optimization</strong></p>
+        <p class="prev-next-title"><strong>Balancing Rotor Systems (Chen et al. 1991)</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

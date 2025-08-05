@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Quasi-Newton Methods &#8212; Nonlinear optimization Chapter</title>
+    <title>Software for Nonlinear Optimization &#8212; Nonlinear optimization Chapter</title>
   
   
   
@@ -57,13 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/5_2/5_2_4';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/5_4/5_4_0';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Constrained Optimization" href="../5_3/5_3_0.html" />
-    <link rel="prev" title="Newton’s Method" href="5_2_3.html" />
+    <link rel="next" title="Illustrative Applications" href="../5_5/5_5_1.html" />
+    <link rel="prev" title="More Advanced Methods" href="../5_3/5_3_4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,14 +179,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../5_1/5_1_1.html"><strong>Preliminary Notation and Concepts</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.2</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="5_2_0.html"><strong>Unconstrained Optimization</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_1.html"><strong>One-Dimensional Search</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_1_1.html"><strong>One-Dimensional Search Algorithm</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_2.html"><strong>Multivariable Search: Gradient Method</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_2_1.html"><strong>Multivariable Gradient Search</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_3.html"><strong>Newton’s Method</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Quasi-Newton Methods</strong></a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_0.html"><strong>Unconstrained Optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1.html"><strong>One-Dimensional Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1_1.html"><strong>One-Dimensional Search Algorithm</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2.html"><strong>Multivariable Search: Gradient Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2_1.html"><strong>Multivariable Gradient Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_3.html"><strong>Newton’s Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_4.html"><strong>Quasi-Newton Methods</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.3</span></p>
 <ul class="nav bd-sidenav">
@@ -199,8 +197,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_4.html"><strong>More Advanced Methods</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.4</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../5_4/5_4_0.html"><strong>Software for Nonlinear Optimization</strong></a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Software for Nonlinear Optimization</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.5</span></p>
 <ul class="nav bd-sidenav">
@@ -268,7 +266,7 @@
       
       
       
-      <li><a href="../../_sources/content/5_2/5_2_4.md" target="_blank"
+      <li><a href="../../_sources/content/5_4/5_4_0.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +348,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quasi-Newton Methods</h1>
+    <h1>Software for Nonlinear Optimization</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -364,11 +362,36 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="quasi-newton-methods">
-<h1><strong>Quasi-Newton Methods</strong><a class="headerlink" href="#quasi-newton-methods" title="Link to this heading">#</a></h1>
-<p>The computational demands of repeatedly invert[ing] the n x n Hessian matrix H motivated the development of a large number of modifications to the original Newton’s method. These modifications differ from one another primarily in the way that the second derivatives are approximated from one iteration to the next.</p>
-<p>These <strong>Quasi-Newton methods</strong> begin with an arbitrary negative definite approximation to H, or its inverse, and through a succession of improvements, eventually converge to the true matrix H. For example, the methods could begin with H = -I, a negative identity matrix at some initial point, <span class="math notranslate nohighlight">\(x^0\)</span>. The Newton direction corresponds to a simple gradient direction. We first perform a line search to get a new point, <span class="math notranslate nohighlight">\(x^1\)</span>. Then, based on the new point and the function value, we perform a rank 1 update to the matrix H (and H<span class="math notranslate nohighlight">\(^{-1}\)</span>) which fits the current points with a quadratic. In so doing, we <em>correct</em> the estimate of H in one dimension, but we also maintain a negative definite approximation. This process is repeated using the new estimate of H to perform a line search and get a new maximum at <span class="math notranslate nohighlight">\(x^2\)</span>. After n iterations an a negative definite quadratic function, the approximation is exact.</p>
-<p>The first such method was introduced by Davidon (1959), and shortly thereafter was improved upon by Fletcher and Powell (1963). The combined technique was known as the <strong>DFP method</strong>. A few years later, minor variations were proposed independently by Broyden (1970), Fletcher (1970), Goldfarb (1969), and Shanno (1970) and these became known collectively as the <strong>BFGS update formula</strong>. This is the method upon which almost all commercial software for nonlinear unconstrained optimization is based. The mathematical foundations and the precise formula typically used for updating the Hessian matrix is given in Beale (1959) and Avriel (1976).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="software-for-nonlinear-optimization">
+<h1><strong>Software for Nonlinear Optimization</strong><a class="headerlink" href="#software-for-nonlinear-optimization" title="Link to this heading">#</a></h1>
+<p>Linear programming models require only the coefficients for objective and constraint functions, and it is easy to enter this input to software by using well-established input formats that have been in use for many years. By contrast, nonlinear models come in many different forms. In some cases, the model itself may actually be very complicated. In others, the model may be fairly simple, but just does not conform to any particular standard model, and therefore finding and using the right software is difficult. This lack of any standard form (resulting from the fact that <em>nonlinear</em> programming includes every imaginable form of mathematical programming except linear!) has always made the selection and use of appropriate software cumbersome.<br>
+As modeling languages such as AIMMS, AMPL, and GAMS have become more sophisticated, software use has become accessible to a larger community of analysts. Software for nonlinear programming often requires that the derivatives of functions be explicitly entered along with other components of the problem. But even this obstacle has been alleviated by software, which analyzes nonlinear formulae and generates software that can evaluate derivatives (a process much more sophisticated than the symbolic differentiation that is available in some mathematical packages). In light of these advances, why are nonlinear programming problems still considered difficult to solve?<br></p>
+<ul />
+<ol class="arabic simple">
+<li><p>In many problems, it is computationally difficult to determine whether or not the objective function is concave (convex) in the feasible region; hence, it is difficult to guarantee convergence to a global optimum.<br></p></li>
+<li><p>If a method finds a solution, it is often difficult to know whether it is local or global.<br></p></li>
+<li><p>Existence of feasible solutions for a problem having nonlinear constraints is difficult to determine, which means there is no guarantee of finding an initial feasible point (starting solution) even when one exists.<br></p></li>
+<li><p>Special-purpose software may need to be used in conjunction with more general nonlinear programming optimization packages.<br></p></li>
+<li><p>Software often employs some variation on Newton or Quasi-Newton methods. This works well if the current point is close to the optimal, but the results are unpredictable when the initial point is far away from the optimal solution.<br></p></li>
+<li><p>Some algorithms require more global knowledge about their nonlinear functions to give satisfactory performance.<br></p></li>
+</ol>
+</ul>
+<p>For these reasons, although modeling languages and convenient software interfaces seem to invite a wide audience of users, it must be recognized that for nonlinear programming, friendly software is no substitute for a savvy and mathematically astute analyst. Yet nonlinear programming is a valuable tool for many applications in science, engineering, and finance, and there is a wide selection of powerful and ingenious software available.<br>
+Choosing software for nonlinear optimization problems is difficult because no one algorithm is efficient and effective for finding a global optimum for general nonlinear problems. Because no method is invariably superior to others, many software products include a number of methods, with the hope that one of the methods will suffice for a given problem. All methods will typically require repeated computation of the objective function, the gradient vector, and an approximation to the Hessian matrix. For many problems, evaluating the gradient requires more time than evaluating the objective function, and approximating the Hessian matrix can take an enormous amount of processing time as well as memory. It is tempting to seek a technique that does not rely on the Hessian, but such techniques (because they are poorly guided) may require many more iterations and in the end are therefore slower.<br>
+Software for nonlinear optimization in general has always been characterized by its variety. Some algorithms seem to perform exceptionally well on problems having constraints that are nearly or mostly linear, while a very different approach may be effective on problems that are highly nonlinear but that have relatively few variables or constraints. And some recent progress has been made by extending interior point methods for linear programming problems to quadratic and even general nonlinear problems.<br>
+<strong>MINOS</strong> is one of several linear and nonlinear optimizers offered within the AIMMS, APMonitor, GAMS, TOMLAB, and AMPL modeling systems and the NEOS Server, but it also can be used as a stand-alone package. The MINOS system is a general-purpose optimizer, designed to find locally optimal solutions involving smooth nonlinear objective and constraint functions. It takes advantage of sparsity in the constraint set, is economical in its use of storage for the reduced Hessian approximation, and is capable of solving largescale linear and nonlinear programs.<br>
+<strong>NPSOL</strong> is sometimes offered as a companion to MINOS, and the two systems share a number of features such as computer platforms and languages. However, NPSOL is especially designed for dense linear and nonlinear programs, and for small models involving nonlinear constraints or whose functions are highly nonlinear and expensive to evaluate. It does not exploit sparsity (its Hessian is always stored in full form); it requires fewer evaluations of the nonlinear functions than does MINOS; it is more robust than MINOS if constraints are highly nonlinear; and convergence is assured for a large class of problems (particularly some for which MINOS fails to converge).<br>
+<strong>MATLAB Optimization Toolbox</strong> includes a wide variety of methods for linear and nonlinear optimization on various platforms (Beck 2015). The MATLAB language facilitates problem input. Constraints and objective functions must be differentiable. TOMLAB is a modeling environment in MATLAB that has a unified input-output format and integrates automatic differentiation. It works with MATLAB solver algorithms as well as other solvers.<br>
+<strong>SAS</strong> Institute, Inc. provides a general nonlinear optimization package that runs on various platforms. SAS offers several techniques including Newton–Raphson, Quasi-Newton, conjugate gradient, Nelder-Mead simplex, hybrid Quasi-Newton, and Gauss–Newton methods, which comprise special routines for quadratic optimization problems. The Quasi-Newton methods use the gradient to update an approximation to the inverse of the Hessian and is applicable where the objective function has continuous first and second derivatives in the feasible region. <em>SAS</em> <em>OPTMODEL</em> provides a general nonlinear optimization problem solver. <em>SAS/OR</em> handles nonconvex nonlinear optimization problems that may have many locally optimal solutions that are not globally optimal. <em>SAS/OR</em> applies multiple global and local search algorithms in parallel to solve difficult optimization problems such as those having discontinuous or non-differentiable functions, to identify global optima.<br>
+<strong>IMSL</strong> libraries comprise an extensive set of subroutines and procedures for a variety of mathematical and statistical purposes that are supported across a wide range of languages as well as hardware and operating system environments including Windows, Linux, and many UNIX platforms. It includes routines to solve nonlinear problems whose size is limited only by the available memory, and is generally successful on problems involving smooth functions.<br>
+<strong>LINGO</strong> modeling language and solver and <em>LINDO API</em> combine large-scale linear, non-linear, and integer optimizers through an interactive modeling environment. The primary underlying technique is a generalized reduced gradient algorithm, and the system incorporates a global solver, multi-start capability, and a quadratic solver.<br>
+<strong>Gurobi Optimization</strong> has a reputation for their robust and high performance software for solving difficult and complex problems. Gurobi products can be embedded in existing development environments or can run in stand-alone mode. They offer advanced implementations of the newest algorithms including parallel algorithms running in innovative shared memory hardware contexts.<br>
+<strong>IBM CPLEX Optimizer</strong> can solve both convex and non-convex quadratic to global optimality. It can find the unique solution to a concave maximization problem and a first-order solution to a non-concave problem. CPLEX has both barrier and simplex algorithms for solving convex quadratic programs and a barrier algorithm for solving non-convex problems. It can also solve problems with convex quadratic constraints.<br>
+<strong>Frontline Solvers</strong> is the developer of MS-Excel Solver that comes with Excel but it is limited in its capability for solving large problems. The company offers a more powerful (premium) solver that works as an add-in to Excel but is capable of solving larger linear and nonlinear problems. The Solver’s SDK (software developer kit) can be used with multiple modern programming languages such as C++, Java and Python. Solver uses the GRG nonlinear method for nonlinear optimization.<br>
+<strong>NEOS Server</strong> is a free internet-based service for solving numerical optimization problems including nonlinear problems. It offers several nonlinear constrained programming solvers such as CONOPT, Knitro, MINOS, LOQO among others. These solvers can be accessed by using modeling languages such as AMPL and GAMS.<br>
+<strong>COIN-OR</strong> (COmputational INfrastructure for Operations Research), is an open-source community for the development and deployment of operations research software including nonlinear optimization solvers such as DFO and FilterSD.<br>
+Valuable reference material for serious practitioners and analysts can be found in Gill et al. (1981, 1984). These volumes do not necessarily stress the intuitive appeal of the methods discussed, but rather they realistically present the details pertinent to the practical performance of some of the most powerful and advanced methods and implementations. Additional recommended sources of information include Fourer (1998, 2017), Moré and Wright (1993), and Nash (1998).<br>
+Finally the Nonlinear Programming Frequently Asked Questions (FAQ) web page offers many resources on nonlinear programming, software and solvers.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -384,7 +407,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/5_2"
+            path: "./content/5_4"
         },
         predefinedOutput: true
     }
@@ -402,20 +425,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="5_2_3.html"
+       href="../5_3/5_3_4.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><strong>Newton’s Method</strong></p>
+        <p class="prev-next-title"><strong>More Advanced Methods</strong></p>
       </div>
     </a>
     <a class="right-next"
-       href="../5_3/5_3_0.html"
+       href="../5_5/5_5_1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Constrained Optimization</strong></p>
+        <p class="prev-next-title"><strong>Illustrative Applications</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

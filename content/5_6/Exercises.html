@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Quasi-Newton Methods &#8212; Nonlinear optimization Chapter</title>
+    <title>Exercises &#8212; Nonlinear optimization Chapter</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/5_2/5_2_4';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/5_6/Exercises';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Constrained Optimization" href="../5_3/5_3_0.html" />
-    <link rel="prev" title="Newton’s Method" href="5_2_3.html" />
+    <link rel="next" title="References and Suggested Readings" href="References.html" />
+    <link rel="prev" title="Key Terms" href="Key_Terms.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,14 +181,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../5_1/5_1_1.html"><strong>Preliminary Notation and Concepts</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.2</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="5_2_0.html"><strong>Unconstrained Optimization</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_1.html"><strong>One-Dimensional Search</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_1_1.html"><strong>One-Dimensional Search Algorithm</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_2.html"><strong>Multivariable Search: Gradient Method</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_2_1.html"><strong>Multivariable Gradient Search</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_3.html"><strong>Newton’s Method</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Quasi-Newton Methods</strong></a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_0.html"><strong>Unconstrained Optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1.html"><strong>One-Dimensional Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1_1.html"><strong>One-Dimensional Search Algorithm</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2.html"><strong>Multivariable Search: Gradient Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2_1.html"><strong>Multivariable Gradient Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_3.html"><strong>Newton’s Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_4.html"><strong>Quasi-Newton Methods</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.3</span></p>
 <ul class="nav bd-sidenav">
@@ -209,11 +209,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_3.html"><strong>Balancing Rotor Systems (Chen et al. 1991)</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.6</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../5_6/5_6_0.html"><strong>Summary</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5_6/Key_Terms.html"><strong>Key Terms</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5_6/Exercises.html"><strong>Exercises</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5_6/References.html"><strong>References and Suggested Readings</strong></a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="5_6_0.html"><strong>Summary</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Key_Terms.html"><strong>Key Terms</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Exercises</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html"><strong>References and Suggested Readings</strong></a></li>
 </ul>
 
     </div>
@@ -268,7 +268,7 @@
       
       
       
-      <li><a href="../../_sources/content/5_2/5_2_4.md" target="_blank"
+      <li><a href="../../_sources/content/5_6/Exercises.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +350,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quasi-Newton Methods</h1>
+    <h1>Exercises</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -364,11 +364,79 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="quasi-newton-methods">
-<h1><strong>Quasi-Newton Methods</strong><a class="headerlink" href="#quasi-newton-methods" title="Link to this heading">#</a></h1>
-<p>The computational demands of repeatedly invert[ing] the n x n Hessian matrix H motivated the development of a large number of modifications to the original Newton’s method. These modifications differ from one another primarily in the way that the second derivatives are approximated from one iteration to the next.</p>
-<p>These <strong>Quasi-Newton methods</strong> begin with an arbitrary negative definite approximation to H, or its inverse, and through a succession of improvements, eventually converge to the true matrix H. For example, the methods could begin with H = -I, a negative identity matrix at some initial point, <span class="math notranslate nohighlight">\(x^0\)</span>. The Newton direction corresponds to a simple gradient direction. We first perform a line search to get a new point, <span class="math notranslate nohighlight">\(x^1\)</span>. Then, based on the new point and the function value, we perform a rank 1 update to the matrix H (and H<span class="math notranslate nohighlight">\(^{-1}\)</span>) which fits the current points with a quadratic. In so doing, we <em>correct</em> the estimate of H in one dimension, but we also maintain a negative definite approximation. This process is repeated using the new estimate of H to perform a line search and get a new maximum at <span class="math notranslate nohighlight">\(x^2\)</span>. After n iterations an a negative definite quadratic function, the approximation is exact.</p>
-<p>The first such method was introduced by Davidon (1959), and shortly thereafter was improved upon by Fletcher and Powell (1963). The combined technique was known as the <strong>DFP method</strong>. A few years later, minor variations were proposed independently by Broyden (1970), Fletcher (1970), Goldfarb (1969), and Shanno (1970) and these became known collectively as the <strong>BFGS update formula</strong>. This is the method upon which almost all commercial software for nonlinear unconstrained optimization is based. The mathematical foundations and the precise formula typically used for updating the Hessian matrix is given in Beale (1959) and Avriel (1976).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercises">
+<h1><strong>Exercises</strong><a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
+<p><strong>5.1</strong></p>
+<p>Consider the function <span class="math notranslate nohighlight">\(f(x, y) = 3x^2 - 2xy + y^2 + 3e^{-x}\)</span>. Is this function convex, concave, or neither? Explain your answer.</p>
+<p><strong>5.2</strong></p>
+<p>Consider the function <span class="math notranslate nohighlight">\(f(x) = x^4 - 8x^3 + 24x^2 - 32x + 16\)</span>. Is this function convex, concave, or neither? Explain your answer.</p>
+<p><strong>5.3</strong></p>
+<p>Consider the following nonlinear problem. Is the feasible region convex?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{minimize} \quad &amp; f(x, y) = x - 2xy + 2y \\
+\text{subject to} \quad &amp;  x^2 + 3y^2 \leq 10 0 \\  
+&amp; 3x + 2y \geq 1 \\
+&amp; x, y \geq 0
+\end{align*}
+\end{split}\]</div>
+<p><strong>5.4</strong></p>
+<p>Consider the following nonlinear problem. Is the feasible region convex?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{minimize} \quad &amp; f(x, y) = 3x^2 - 2xy + y^2 \\
+\text{subject to} \quad &amp;  x^3 - 12x - y \geq 0 \\  
+&amp; x \geq 1 
+\end{align*}
+\end{split}\]</div>
+<p><strong>5.5</strong></p>
+<p>Use the one dimensional search described in Section 5.2.1 (also known as a bisection search) to find a minimum of the function</p>
+<div class="math notranslate nohighlight">
+\[f(x) = x^4 - 3x^3 + 2x^2 - 2x + 7\]</div>
+<div class="math notranslate nohighlight">
+\[\text{over the range } 1 \leq x \leq 10 \text{. Use } \epsilon = 0.1\]</div>
+<p><strong>5.6</strong></p>
+<p>The <em>golden section search</em> is similar to the bisection search for one dimensional problems, except that it uses only function values and it does not require calculating derivatives. This is particularly useful when the function does not have first derivatives defined, or when computing the first derivatives is very expensive computationally. Suppose you are given two initial end-points, <span class="math notranslate nohighlight">\(a \le x \le d\)</span>, and the minimum of <span class="math notranslate nohighlight">\(f(x)\)</span> is known to lie in this range. Evaluate the function at two points <span class="math notranslate nohighlight">\(c = a + 0.618 \cdot [d - a]\)</span>, and <span class="math notranslate nohighlight">\(b = d - 0.618 \cdot [d - a]\)</span>. Note that <span class="math notranslate nohighlight">\(a &lt; b &lt; c &lt; d\)</span>, but they are not evenly spaced. If <span class="math notranslate nohighlight">\(f(b) &lt; f(c)\)</span>, then let <span class="math notranslate nohighlight">\([a, c]\)</span> be the new interval, and repeat the calculation. Otherwise, let <span class="math notranslate nohighlight">\([b, d]\)</span> be the new interval. The magic aspect of the golden section is that when you have to compute the new interior points between <span class="math notranslate nohighlight">\([a, c]\)</span>, you discover that <span class="math notranslate nohighlight">\(b\)</span> is precisely <span class="math notranslate nohighlight">\(0.618\)</span> of the distance between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. In other words, you only need to make one additional function evaluation. Similarly, if the new interval is <span class="math notranslate nohighlight">\([b, d]\)</span>, then point <span class="math notranslate nohighlight">\(c\)</span> is already lined up with one of the new required points.</p>
+<p>Use the method of golden section to find the minimum of the function in the previous problem with <span class="math notranslate nohighlight">\(\epsilon = 0.1\)</span>.</p>
+<p><strong>5.7</strong></p>
+<p>Consider the unconstrained problem:</p>
+<div class="math notranslate nohighlight">
+\[\text{minimize } f(x, y) = 3x^2 - 2xy + y^2 + 3e^{-x}\]</div>
+<p>Starting from the solution <span class="math notranslate nohighlight">\((x, y) = (0, 0)\)</span>, and an initial step length of 2, perform two iterations of the gradient search algorithm to find a minimum. That is, compute the gradient at the point <span class="math notranslate nohighlight">\((0, 0)\)</span>, and perform a one dimensional line search to find a minimum along the line. From this new point, perform a second line search.</p>
+<p><strong>5.8</strong></p>
+<p>Repeat Exercise 5.7, but use Newton’s method to find the solution.</p>
+<p><strong>5.9</strong></p>
+<p><em>Rosenbrock’s function</em> is a particularly difficult problem that looks deceptively simple. Consider the unconstrained function:</p>
+<div class="math notranslate nohighlight">
+\[\text{minimize } f(x, y) = 100 (y - x^2)^2 + (1 - x)^2\]</div>
+<p>The function has a unique minimum at the point <span class="math notranslate nohighlight">\((1, 1)\)</span> (where <span class="math notranslate nohighlight">\(f(1, 1) = 0\)</span>). This pathological example has also been called the <em>banana function</em>. If you plot the function, it follows a narrow banana-shaped valley from the point <span class="math notranslate nohighlight">\((-1, 1)\)</span> to the minimum <span class="math notranslate nohighlight">\((1, 1)\)</span>. Because the valley has quite steep sides, anytime an algorithm tries to follow the downward slope in a straight line, the line almost immediately starts going up, resulting in very short steps. It is very difficult for any algorithm to find the way around the banana.</p>
+<p>Try using both a gradient search and Newton’s method beginning at the point <span class="math notranslate nohighlight">\((-1, 1)\)</span>. Perform several iterations. You will likely observe rather poor progress along a narrow zig-zag path.</p>
+<p><strong>5.10</strong></p>
+<p>Consider the problem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{minimize} \quad &amp; f(x, y) = x^2y \\
+\text{subject to} \quad &amp;  x^2 + y^2 = 1 
+\end{align*}
+\end{split}\]</div>
+<p>Use the method of Lagrange multipliers to express this problem as an unconstrained minimization problem, and solve the problem using both the gradient method and Newton’s method.</p>
+<p><strong>5.11</strong></p>
+<p>Consider the following nonlinear problem with linear constraints:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{maximize} \quad &amp; f(x, y) = x^2y + 2y^2 \\
+\text{subject to} \quad &amp;  x + 3y \leq 9 \\  
+&amp; x + 2y \leq 8 \\
+&amp; 3x + 2y \leq 18 \\
+&amp; 0 \leq x \leq 5 \\
+&amp;  0 \leq y \leq 2
+\end{align*}
+\end{split}\]</div>
+<p>Solve this problem graphically. Begin at the point <span class="math notranslate nohighlight">\((0, 0)\)</span>, and check the gradient. If the Karush-Kuhn-Tucker conditions are not satisfied, you should be able to find an improving direction in the feasible region.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -384,7 +452,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/5_2"
+            path: "./content/5_6"
         },
         predefinedOutput: true
     }
@@ -402,20 +470,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="5_2_3.html"
+       href="Key_Terms.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><strong>Newton’s Method</strong></p>
+        <p class="prev-next-title"><strong>Key Terms</strong></p>
       </div>
     </a>
     <a class="right-next"
-       href="../5_3/5_3_0.html"
+       href="References.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Constrained Optimization</strong></p>
+        <p class="prev-next-title"><strong>References and Suggested Readings</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Quasi-Newton Methods &#8212; Nonlinear optimization Chapter</title>
+    <title>References and Suggested Readings &#8212; Nonlinear optimization Chapter</title>
   
   
   
@@ -57,13 +57,10 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/5_2/5_2_4';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/5_6/References';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Constrained Optimization" href="../5_3/5_3_0.html" />
-    <link rel="prev" title="Newton’s Method" href="5_2_3.html" />
+    <link rel="prev" title="Exercises" href="Exercises.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,14 +178,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../5_1/5_1_1.html"><strong>Preliminary Notation and Concepts</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.2</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="5_2_0.html"><strong>Unconstrained Optimization</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_1.html"><strong>One-Dimensional Search</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_1_1.html"><strong>One-Dimensional Search Algorithm</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_2.html"><strong>Multivariable Search: Gradient Method</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_2_1.html"><strong>Multivariable Gradient Search</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_2_3.html"><strong>Newton’s Method</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Quasi-Newton Methods</strong></a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_0.html"><strong>Unconstrained Optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1.html"><strong>One-Dimensional Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1_1.html"><strong>One-Dimensional Search Algorithm</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2.html"><strong>Multivariable Search: Gradient Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2_1.html"><strong>Multivariable Gradient Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_3.html"><strong>Newton’s Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_4.html"><strong>Quasi-Newton Methods</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.3</span></p>
 <ul class="nav bd-sidenav">
@@ -209,11 +206,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_3.html"><strong>Balancing Rotor Systems (Chen et al. 1991)</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.6</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../5_6/5_6_0.html"><strong>Summary</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5_6/Key_Terms.html"><strong>Key Terms</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5_6/Exercises.html"><strong>Exercises</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5_6/References.html"><strong>References and Suggested Readings</strong></a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="5_6_0.html"><strong>Summary</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Key_Terms.html"><strong>Key Terms</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercises.html"><strong>Exercises</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>References and Suggested Readings</strong></a></li>
 </ul>
 
     </div>
@@ -268,7 +265,7 @@
       
       
       
-      <li><a href="../../_sources/content/5_2/5_2_4.md" target="_blank"
+      <li><a href="../../_sources/content/5_6/References.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +347,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quasi-Newton Methods</h1>
+    <h1>References and Suggested Readings</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -364,11 +361,62 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="quasi-newton-methods">
-<h1><strong>Quasi-Newton Methods</strong><a class="headerlink" href="#quasi-newton-methods" title="Link to this heading">#</a></h1>
-<p>The computational demands of repeatedly invert[ing] the n x n Hessian matrix H motivated the development of a large number of modifications to the original Newton’s method. These modifications differ from one another primarily in the way that the second derivatives are approximated from one iteration to the next.</p>
-<p>These <strong>Quasi-Newton methods</strong> begin with an arbitrary negative definite approximation to H, or its inverse, and through a succession of improvements, eventually converge to the true matrix H. For example, the methods could begin with H = -I, a negative identity matrix at some initial point, <span class="math notranslate nohighlight">\(x^0\)</span>. The Newton direction corresponds to a simple gradient direction. We first perform a line search to get a new point, <span class="math notranslate nohighlight">\(x^1\)</span>. Then, based on the new point and the function value, we perform a rank 1 update to the matrix H (and H<span class="math notranslate nohighlight">\(^{-1}\)</span>) which fits the current points with a quadratic. In so doing, we <em>correct</em> the estimate of H in one dimension, but we also maintain a negative definite approximation. This process is repeated using the new estimate of H to perform a line search and get a new maximum at <span class="math notranslate nohighlight">\(x^2\)</span>. After n iterations an a negative definite quadratic function, the approximation is exact.</p>
-<p>The first such method was introduced by Davidon (1959), and shortly thereafter was improved upon by Fletcher and Powell (1963). The combined technique was known as the <strong>DFP method</strong>. A few years later, minor variations were proposed independently by Broyden (1970), Fletcher (1970), Goldfarb (1969), and Shanno (1970) and these became known collectively as the <strong>BFGS update formula</strong>. This is the method upon which almost all commercial software for nonlinear unconstrained optimization is based. The mathematical foundations and the precise formula typically used for updating the Hessian matrix is given in Beale (1959) and Avriel (1976).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="references-and-suggested-readings">
+<h1><strong>References and Suggested Readings</strong><a class="headerlink" href="#references-and-suggested-readings" title="Link to this heading">#</a></h1>
+<p>Avriel, M. 1976. Nonlinear Programming: Analysis and Methods. Englewood Cliffs, NJ: Prentice-Hall.<br></p>
+<p>Bazaraa, M. S., H. D. Sherali, and C. Shetty. 2013. Nonlinear Programming: Theory and Algorithms. New York: John Wiley &amp; Sons.<br></p>
+<p>Beale, E. M. L. 1959. On quadratic programming. Naval Research Logistics Quarterly 6 (3): 227–243.<br></p>
+<p>Beale, E. M. L. 1985. The evolution of mathematical programming systems. Operational Research Society 36 (5): 357–366.<br></p>
+<p>Beale, E. M. L. 1988. Introduction to Optimization. Chichester, UK: John Wiley &amp; Sons.<br></p>
+<p>Beale, E. M. L., G. C. Beare, and P. Bryan-Tatham. 1974. The DOAE Reinforcement and Redeployment Study: A Case Study in Mathematical Programming in Mathematical Programming in Theory and Practice. Amsterdam, the Netherlands: North-Holland <br></p>
+<p>Beck, A. 2015. Introduction to Nonlinear Optimization: Theory, Algorithms and Applications with MATLAB SIAM. New York: Society for Industrial &amp; Applied Mathematics.<br></p>
+<p>Beightler, C. S., D. T. Phillips, and D. J. Wilde. 1979. Foundations of Optimization, 2nd ed. Englewood Cliffs, NJ: Prentice-Hall.<br></p>
+<p>Beightler, C., and D. T. Phillips. 1976. Applied Geometric Programming. New York: Wiley.<br></p>
+<p>Bertsekas, D. P. 2015. Convex Optimization Algorithms. Belmont, MA: Athena Scientific.<br></p>
+<p>Bertsekas, D. P. 2016. Nonlinear Programming, 3rd ed. Belmont, MA: Athena Scientific.<br></p>
+<p>Bertsimas, D., C. Darnell, and R. Soucy. 1999. Portfolio construction through mixed-integer programming at Grantham. Interfaces 29 (1): 49–66.<br></p>
+<p>Broyden, C. G. 1970. The convergence of a class of double-rank minimization algorithms. 1. General considerations (pp. 76–90); 2. The new algorithm (pp. 222–231). Journal of the Institute of Mathematics and its Applications 6.<br></p>
+<p>Burley, D. M. 1974. Studies in Optimization. New York: John Wiley &amp; Sons.<br></p>
+<p>Chen, W. J., S. D. Rajan, H. D. Nelson, and M. Rajan. 1991. Application of nonlinear programming for balancing rotor systems. Engineering Optimisation 17: 79–90.<br></p>
+<p>Cheney, E. W., and D. Kincaid. 1980. Numerical Mathematics and Computing. Monterey, CA: Brooks/Cole.<br></p>
+<p>Davidon, W. C. 1959. Variable metric method for minimization. AEC Research &amp; Development Report ANL-5990 (Rev.) Lemont, IL: Argonne National Laboratory.<br></p>
+<p>Diwekar, U. 2010. Introduction to Applied Optimization. New York: Springer.<br></p>
+<p>Fletcher, R. 1970. A new approach to variable metric algorithms. The Computer Journal 13: 317–322.<br></p>
+<p>Fletcher, R. 1987. Practical Methods of Optimization, 2nd ed. Chichester, UK: John Wiley &amp; Sons.<br></p>
+<p>Fletcher, R., and M. J. D. Powell. 1963. A rapidly convergent descent method for minimization. The Computer Journal 6: 163–168.<br></p>
+<p>Floudas, C. A., and P. M. Pardalos (Eds.). 1992. Recent Advances in Global Optimization. Princeton, NJ: Princeton University Press.<br></p>
+<p>Fourer, R. 2017. Software survey: Linear programming. OR/MS Today 44 (3): 48–59.<br></p>
+<p>Fourer, R. 1998. Software for optimization: A survey of recent trends in mathematical programming systems. OR/MS Today 25 (6): 40–43.<br></p>
+<p>Gay, D. M. 1983. Subroutines for unconstrained minimization. ACM Transaction on Mathematical Software 9: 503–524.<br></p>
+<p>Gill, P. E., W. Murray, and M. H. Wright. 1981. Practical Optimization. New York: Academic Press.<br></p>
+<p>Gill, P. E., W. Murray, and M. H. Wright. 1984. Trends in nonlinear programming software. European Journal of Operational Research 17: 141–149.<br></p>
+<p>Goldfarb, D. 1969. Sufficient Conditions for the Convergence of a Variable-Metric Algorithm, in Optimization. London, UK: Academic Press.<br></p>
+<p>Hadley, G. 1974. Nonlinear and Dynamic Programming. Reading, MA: Addison-Wesley.<br></p>
+<p>Hooke, R., and T. A. Jeeves. 1961. Direct search solution of numerical and statistical problems. JACM 8: 212–229.<br></p>
+<p>Kuhn, H. W., and A. W. Tucker. 1951. Non-linear programming. Proceedings of the 2nd Berkeley Symposium on Mathematical Statistics and Probability. Berkeley, CA: University of California Press, Vol. 481–492.<br></p>
+<p>Lasdon, L. S., and A. D. Warren. 1978. Generalized reduced gradient software for linear and nonlinear constrained problems. In Greenberg (Ed.), Design and Implementation for Optimization Software. Alphen aan den Rijn, the Netherlands: Sijthoff/Noordhoff, pp. 363–397.<br></p>
+<p>Lemke, C. E. 1962. A method of solution for quadratic programs. Management Science 8 (4): 442–453.<br></p>
+<p>Liebman, J., L. Lasdon, L. Schrage, and A. Waren. 1986. Modeling and Optimization with GINO. Palo Alto, CA: The Scientific Press.<br></p>
+<p>Luenberger, D. G., and Y. Ye. 2008. Linear and Nonlinear Programming, 3rd ed., Vol. 116, International Series in Operations Research &amp; Management Science. New York: Springer.<br></p>
+<p>Markowitz, H. M. 1959. Portfolio Selection, Efficient Diversification of Investments. New York: John Wiley &amp; Sons.<br></p>
+<p>Markowitz, H. M. 1987. Mean-Variance Analysis in Portfolio Choice and Capital Markets. New York: Blackwell.<br></p>
+<p>McCormick, G. P. 1983. Nonlinear Programming: Theory, Algorithms and Applications. New York: John Wiley &amp; Sons.<br></p>
+<p>Moré, J. J., and S. J. Wright. 1993. Optimization Software Guide. Philadelphia, PA: Society for Industrial and Applied Mathematics.<br></p>
+<p>Murtagh, B. A., and M. A. Saunders. 1978. Large-scale linearly constrained optimization. Mathematical Programming 14: 41–72.<br></p>
+<p>Nash, S. G. 1998. Software survey: Nonlinear programming. OR/MS Today 25 (3): 36–45.<br></p>
+<p>Nash, S. G., and A. Sofer. 1996. Linear and Nonlinear Programming. New York: McGraw-Hill.<br></p>
+<p>Nelder, J. A., and R. Mead. 1965. A simplex method for function minimization. Computer Journal 7 (4): 308–313.<br></p>
+<p>Powell, M. J. D. 1964. An efficient method for finding the minimum of a function of several variables without calculating derivatives. Computer Journal 7: 155–162.<br></p>
+<p>Ravindran, A., and H. K. Lee. 1981. Computer experiments on quadratic programming algorithms. European Journal of Operational Research 8 (2): 166–174.<br></p>
+<p>Rigby, B., L. S. Lasdon, and A. D. Waren. 1995. The evolution of Texaco’s blending systems: From OMEGA to StarBlend. Interfaces 25 (5): 64–83.<br></p>
+<p>Rosenbrock, H. H. 1960. An automatic method for finding the greatest or least value of a function. Computer Journal 3: 175–184.<br></p>
+<p>Schrage, L. 1986. Linear, Integer and Quadratic Programming with LINDO. Palo Alto, CA: The Scientific Press.<br></p>
+<p>Shanno, D. F. 1970. Conditioning of Quasi-Newton methods for function minimization. Mathematics of Computation 24: 647–656.<br></p>
+<p>Sharpe, W. F. 1963. A simplified model for portfolio analysis. Management Science 9: 277–293.<br></p>
+<p>Simmons, D. M. 1975. Nonlinear Programming for Operations Research. Englewood Cliffs, NJ: Prentice-Hall.<br></p>
+<p>Wilde, D. J. 1964. Optimum Seeking Methods. Englewood Cliffs, NJ: Prentice-Hall.<br></p>
+<p>Wolfe, P. 1959. The simplex method for quadratic programming. Econometrica 27 (3): 382–398.<br></p>
+<p>Wolfe, P. 1967. Methods of Nonlinear Programming in Nonlinear Programming. Amsterdam, the Netherlands: North-Holland.<br></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -384,7 +432,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/5_2"
+            path: "./content/5_6"
         },
         predefinedOutput: true
     }
@@ -402,22 +450,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="5_2_3.html"
+       href="Exercises.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><strong>Newton’s Method</strong></p>
+        <p class="prev-next-title"><strong>Exercises</strong></p>
       </div>
-    </a>
-    <a class="right-next"
-       href="../5_3/5_3_0.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Constrained Optimization</strong></p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
