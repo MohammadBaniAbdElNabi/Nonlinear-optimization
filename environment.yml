@@ -1,0 +1,15 @@
+name: Nonlinear_optimization
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pyomo
+  - numpy
+  - matplotlib
+  - ipywidgets
+  - jupyter-book
+  - scipy
+  - pip
+  - pip:
+      - notebook
+  - coincbc  

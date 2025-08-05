@@ -1,0 +1,22 @@
+title: Nonlinear optimization Chapter
+author: Ghaith Rabadi
+copyright: "2025"
+execute:
+  execute_notebooks: force
+html:
+  use_repository_button: false
+  use_issues_button: false
+  use_edit_page_button: false
+launch_buttons:
+  binderhub_url: https://mybinder.org
+  thebe: true
+interactive:
+  use_thebe: true
+  thebe_config:
+    requestKernel: true
+    binderOptions:
+      repo: MohammadBaniAbdElNabi/Nonlinear-optimization
+      ref: main  
+repository:
+  url: https://github.com/MohammadBaniAbdElNabi/Nonlinear-optimization
+  branch: main  

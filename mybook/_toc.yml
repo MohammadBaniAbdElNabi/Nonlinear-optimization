@@ -1,0 +1,25 @@
+format: jb-book
+root: intro
+parts:
+- caption: Setup
+  chapters:
+  - file: setup  
+- caption: Section 5.1
+  chapters:
+  - file: content/5_1/5_1_0.md
+  - file: content/5_1/5_1_1.md
+- caption: Section 5.2
+  chapters:
+  - file: content/5_2/5_2_0.md
+  - file: content/5_2/5_2_1.md
+  - file: content/5_2/5_2_1_1.md
+  - file: content/5_2/5_2_2.md
+  - file: content/5_2/5_2_2_1.md
+  - file: content/5_2/5_2_3.md
+  - file: content/5_2/5_2_4.md
+- caption: Section 5.3
+  chapters:
+  - file: content/5_3/5_3_0.md
+  - file: content/5_3/5_3_1.md
+  - file: content/5_3/5_3_2.md
+  - file: content/5_3/5_3_3.md

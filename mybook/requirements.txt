@@ -1,0 +1,7 @@
+pyomo
+numpy
+matplotlib
+ipywidgets
+jupyter-book
+ghp-import
+jupyterlab
