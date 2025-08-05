@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Software for Nonlinear Optimization &#8212; Nonlinear optimization Chapter</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/5_4/5_4_0';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Illustrative Applications" href="../5_5/5_5_1.html" />
+    <link rel="prev" title="More Advanced Methods" href="../5_3/5_3_4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Nonlinear optimization Chapter</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Online Book Guide
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_1/5_1_0.html"><strong>Nonlinear optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_1/5_1_1.html"><strong>Preliminary Notation and Concepts</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_0.html"><strong>Unconstrained Optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1.html"><strong>One-Dimensional Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1_1.html"><strong>One-Dimensional Search Algorithm</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2.html"><strong>Multivariable Search: Gradient Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2_1.html"><strong>Multivariable Gradient Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_3.html"><strong>Newton’s Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_4.html"><strong>Quasi-Newton Methods</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_0.html"><strong>Constrained Optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_1.html"><strong>Lagrange Multipliers (Equality Constraints)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_2.html"><strong>Karush–Kuhn–Tucker Conditions (Inequality Constraints)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_3.html"><strong>Quadratic Programming</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_4.html"><strong>More Advanced Methods</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.4</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Software for Nonlinear Optimization</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_1.html"><strong>Illustrative Applications</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_2.html"><strong>Portfolio Construction (Bertsimas et al. 1999)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_3.html"><strong>Balancing Rotor Systems (Chen et al. 1991)</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_6/5_6_0.html"><strong>Summary</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_6/Key_Terms.html"><strong>Key Terms</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_6/Exercises.html"><strong>Exercises</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_6/References.html"><strong>References and Suggested Readings</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/5_4/5_4_0.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Software for Nonlinear Optimization</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="software-for-nonlinear-optimization">
+<h1><strong>Software for Nonlinear Optimization</strong><a class="headerlink" href="#software-for-nonlinear-optimization" title="Link to this heading">#</a></h1>
+<p>Linear programming models require only the coefficients for objective and constraint functions, and it is easy to enter this input to software by using well-established input formats that have been in use for many years. By contrast, nonlinear models come in many different forms. In some cases, the model itself may actually be very complicated. In others, the model may be fairly simple, but just does not conform to any particular standard model, and therefore finding and using the right software is difficult. This lack of any standard form (resulting from the fact that <em>nonlinear</em> programming includes every imaginable form of mathematical programming except linear!) has always made the selection and use of appropriate software cumbersome.<br>
+As modeling languages such as AIMMS, AMPL, and GAMS have become more sophisticated, software use has become accessible to a larger community of analysts. Software for nonlinear programming often requires that the derivatives of functions be explicitly entered along with other components of the problem. But even this obstacle has been alleviated by software, which analyzes nonlinear formulae and generates software that can evaluate derivatives (a process much more sophisticated than the symbolic differentiation that is available in some mathematical packages). In light of these advances, why are nonlinear programming problems still considered difficult to solve?<br></p>
+<ul />
+<ol class="arabic simple">
+<li><p>In many problems, it is computationally difficult to determine whether or not the objective function is concave (convex) in the feasible region; hence, it is difficult to guarantee convergence to a global optimum.<br></p></li>
+<li><p>If a method finds a solution, it is often difficult to know whether it is local or global.<br></p></li>
+<li><p>Existence of feasible solutions for a problem having nonlinear constraints is difficult to determine, which means there is no guarantee of finding an initial feasible point (starting solution) even when one exists.<br></p></li>
+<li><p>Special-purpose software may need to be used in conjunction with more general nonlinear programming optimization packages.<br></p></li>
+<li><p>Software often employs some variation on Newton or Quasi-Newton methods. This works well if the current point is close to the optimal, but the results are unpredictable when the initial point is far away from the optimal solution.<br></p></li>
+<li><p>Some algorithms require more global knowledge about their nonlinear functions to give satisfactory performance.<br></p></li>
+</ol>
+</ul>
+<p>For these reasons, although modeling languages and convenient software interfaces seem to invite a wide audience of users, it must be recognized that for nonlinear programming, friendly software is no substitute for a savvy and mathematically astute analyst. Yet nonlinear programming is a valuable tool for many applications in science, engineering, and finance, and there is a wide selection of powerful and ingenious software available.<br>
+Choosing software for nonlinear optimization problems is difficult because no one algorithm is efficient and effective for finding a global optimum for general nonlinear problems. Because no method is invariably superior to others, many software products include a number of methods, with the hope that one of the methods will suffice for a given problem. All methods will typically require repeated computation of the objective function, the gradient vector, and an approximation to the Hessian matrix. For many problems, evaluating the gradient requires more time than evaluating the objective function, and approximating the Hessian matrix can take an enormous amount of processing time as well as memory. It is tempting to seek a technique that does not rely on the Hessian, but such techniques (because they are poorly guided) may require many more iterations and in the end are therefore slower.<br>
+Software for nonlinear optimization in general has always been characterized by its variety. Some algorithms seem to perform exceptionally well on problems having constraints that are nearly or mostly linear, while a very different approach may be effective on problems that are highly nonlinear but that have relatively few variables or constraints. And some recent progress has been made by extending interior point methods for linear programming problems to quadratic and even general nonlinear problems.<br>
+<strong>MINOS</strong> is one of several linear and nonlinear optimizers offered within the AIMMS, APMonitor, GAMS, TOMLAB, and AMPL modeling systems and the NEOS Server, but it also can be used as a stand-alone package. The MINOS system is a general-purpose optimizer, designed to find locally optimal solutions involving smooth nonlinear objective and constraint functions. It takes advantage of sparsity in the constraint set, is economical in its use of storage for the reduced Hessian approximation, and is capable of solving largescale linear and nonlinear programs.<br>
+<strong>NPSOL</strong> is sometimes offered as a companion to MINOS, and the two systems share a number of features such as computer platforms and languages. However, NPSOL is especially designed for dense linear and nonlinear programs, and for small models involving nonlinear constraints or whose functions are highly nonlinear and expensive to evaluate. It does not exploit sparsity (its Hessian is always stored in full form); it requires fewer evaluations of the nonlinear functions than does MINOS; it is more robust than MINOS if constraints are highly nonlinear; and convergence is assured for a large class of problems (particularly some for which MINOS fails to converge).<br>
+<strong>MATLAB Optimization Toolbox</strong> includes a wide variety of methods for linear and nonlinear optimization on various platforms (Beck 2015). The MATLAB language facilitates problem input. Constraints and objective functions must be differentiable. TOMLAB is a modeling environment in MATLAB that has a unified input-output format and integrates automatic differentiation. It works with MATLAB solver algorithms as well as other solvers.<br>
+<strong>SAS</strong> Institute, Inc. provides a general nonlinear optimization package that runs on various platforms. SAS offers several techniques including Newton–Raphson, Quasi-Newton, conjugate gradient, Nelder-Mead simplex, hybrid Quasi-Newton, and Gauss–Newton methods, which comprise special routines for quadratic optimization problems. The Quasi-Newton methods use the gradient to update an approximation to the inverse of the Hessian and is applicable where the objective function has continuous first and second derivatives in the feasible region. <em>SAS</em> <em>OPTMODEL</em> provides a general nonlinear optimization problem solver. <em>SAS/OR</em> handles nonconvex nonlinear optimization problems that may have many locally optimal solutions that are not globally optimal. <em>SAS/OR</em> applies multiple global and local search algorithms in parallel to solve difficult optimization problems such as those having discontinuous or non-differentiable functions, to identify global optima.<br>
+<strong>IMSL</strong> libraries comprise an extensive set of subroutines and procedures for a variety of mathematical and statistical purposes that are supported across a wide range of languages as well as hardware and operating system environments including Windows, Linux, and many UNIX platforms. It includes routines to solve nonlinear problems whose size is limited only by the available memory, and is generally successful on problems involving smooth functions.<br>
+<strong>LINGO</strong> modeling language and solver and <em>LINDO API</em> combine large-scale linear, non-linear, and integer optimizers through an interactive modeling environment. The primary underlying technique is a generalized reduced gradient algorithm, and the system incorporates a global solver, multi-start capability, and a quadratic solver.<br>
+<strong>Gurobi Optimization</strong> has a reputation for their robust and high performance software for solving difficult and complex problems. Gurobi products can be embedded in existing development environments or can run in stand-alone mode. They offer advanced implementations of the newest algorithms including parallel algorithms running in innovative shared memory hardware contexts.<br>
+<strong>IBM CPLEX Optimizer</strong> can solve both convex and non-convex quadratic to global optimality. It can find the unique solution to a concave maximization problem and a first-order solution to a non-concave problem. CPLEX has both barrier and simplex algorithms for solving convex quadratic programs and a barrier algorithm for solving non-convex problems. It can also solve problems with convex quadratic constraints.<br>
+<strong>Frontline Solvers</strong> is the developer of MS-Excel Solver that comes with Excel but it is limited in its capability for solving large problems. The company offers a more powerful (premium) solver that works as an add-in to Excel but is capable of solving larger linear and nonlinear problems. The Solver’s SDK (software developer kit) can be used with multiple modern programming languages such as C++, Java and Python. Solver uses the GRG nonlinear method for nonlinear optimization.<br>
+<strong>NEOS Server</strong> is a free internet-based service for solving numerical optimization problems including nonlinear problems. It offers several nonlinear constrained programming solvers such as CONOPT, Knitro, MINOS, LOQO among others. These solvers can be accessed by using modeling languages such as AMPL and GAMS.<br>
+<strong>COIN-OR</strong> (COmputational INfrastructure for Operations Research), is an open-source community for the development and deployment of operations research software including nonlinear optimization solvers such as DFO and FilterSD.<br>
+Valuable reference material for serious practitioners and analysts can be found in Gill et al. (1981, 1984). These volumes do not necessarily stress the intuitive appeal of the methods discussed, but rather they realistically present the details pertinent to the practical performance of some of the most powerful and advanced methods and implementations. Additional recommended sources of information include Fourer (1998, 2017), Moré and Wright (1993), and Nash (1998).<br>
+Finally the Nonlinear Programming Frequently Asked Questions (FAQ) web page offers many resources on nonlinear programming, software and solvers.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "MohammadBaniAbdElNabi/Nonlinear-optimization",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/5_4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../5_3/5_3_4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>More Advanced Methods</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../5_5/5_5_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Illustrative Applications</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ghaith Rabadi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exercises &#8212; Nonlinear optimization Chapter</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/5_6/Exercises';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="References and Suggested Readings" href="References.html" />
+    <link rel="prev" title="Key Terms" href="Key_Terms.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Nonlinear optimization Chapter</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Online Book Guide
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_1/5_1_0.html"><strong>Nonlinear optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_1/5_1_1.html"><strong>Preliminary Notation and Concepts</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_0.html"><strong>Unconstrained Optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1.html"><strong>One-Dimensional Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1_1.html"><strong>One-Dimensional Search Algorithm</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2.html"><strong>Multivariable Search: Gradient Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2_1.html"><strong>Multivariable Gradient Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_3.html"><strong>Newton’s Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_4.html"><strong>Quasi-Newton Methods</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_0.html"><strong>Constrained Optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_1.html"><strong>Lagrange Multipliers (Equality Constraints)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_2.html"><strong>Karush–Kuhn–Tucker Conditions (Inequality Constraints)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_3.html"><strong>Quadratic Programming</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_4.html"><strong>More Advanced Methods</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_4/5_4_0.html"><strong>Software for Nonlinear Optimization</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_1.html"><strong>Illustrative Applications</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_2.html"><strong>Portfolio Construction (Bertsimas et al. 1999)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_3.html"><strong>Balancing Rotor Systems (Chen et al. 1991)</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.6</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="5_6_0.html"><strong>Summary</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Key_Terms.html"><strong>Key Terms</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Exercises</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html"><strong>References and Suggested Readings</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/5_6/Exercises.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercises</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercises">
+<h1><strong>Exercises</strong><a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
+<p><strong>5.1</strong></p>
+<p>Consider the function <span class="math notranslate nohighlight">\(f(x, y) = 3x^2 - 2xy + y^2 + 3e^{-x}\)</span>. Is this function convex, concave, or neither? Explain your answer.</p>
+<p><strong>5.2</strong></p>
+<p>Consider the function <span class="math notranslate nohighlight">\(f(x) = x^4 - 8x^3 + 24x^2 - 32x + 16\)</span>. Is this function convex, concave, or neither? Explain your answer.</p>
+<p><strong>5.3</strong></p>
+<p>Consider the following nonlinear problem. Is the feasible region convex?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{minimize} \quad &amp; f(x, y) = x - 2xy + 2y \\
+\text{subject to} \quad &amp;  x^2 + 3y^2 \leq 10 0 \\  
+&amp; 3x + 2y \geq 1 \\
+&amp; x, y \geq 0
+\end{align*}
+\end{split}\]</div>
+<p><strong>5.4</strong></p>
+<p>Consider the following nonlinear problem. Is the feasible region convex?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{minimize} \quad &amp; f(x, y) = 3x^2 - 2xy + y^2 \\
+\text{subject to} \quad &amp;  x^3 - 12x - y \geq 0 \\  
+&amp; x \geq 1 
+\end{align*}
+\end{split}\]</div>
+<p><strong>5.5</strong></p>
+<p>Use the one dimensional search described in Section 5.2.1 (also known as a bisection search) to find a minimum of the function</p>
+<div class="math notranslate nohighlight">
+\[f(x) = x^4 - 3x^3 + 2x^2 - 2x + 7\]</div>
+<div class="math notranslate nohighlight">
+\[\text{over the range } 1 \leq x \leq 10 \text{. Use } \epsilon = 0.1\]</div>
+<p><strong>5.6</strong></p>
+<p>The <em>golden section search</em> is similar to the bisection search for one dimensional problems, except that it uses only function values and it does not require calculating derivatives. This is particularly useful when the function does not have first derivatives defined, or when computing the first derivatives is very expensive computationally. Suppose you are given two initial end-points, <span class="math notranslate nohighlight">\(a \le x \le d\)</span>, and the minimum of <span class="math notranslate nohighlight">\(f(x)\)</span> is known to lie in this range. Evaluate the function at two points <span class="math notranslate nohighlight">\(c = a + 0.618 \cdot [d - a]\)</span>, and <span class="math notranslate nohighlight">\(b = d - 0.618 \cdot [d - a]\)</span>. Note that <span class="math notranslate nohighlight">\(a &lt; b &lt; c &lt; d\)</span>, but they are not evenly spaced. If <span class="math notranslate nohighlight">\(f(b) &lt; f(c)\)</span>, then let <span class="math notranslate nohighlight">\([a, c]\)</span> be the new interval, and repeat the calculation. Otherwise, let <span class="math notranslate nohighlight">\([b, d]\)</span> be the new interval. The magic aspect of the golden section is that when you have to compute the new interior points between <span class="math notranslate nohighlight">\([a, c]\)</span>, you discover that <span class="math notranslate nohighlight">\(b\)</span> is precisely <span class="math notranslate nohighlight">\(0.618\)</span> of the distance between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. In other words, you only need to make one additional function evaluation. Similarly, if the new interval is <span class="math notranslate nohighlight">\([b, d]\)</span>, then point <span class="math notranslate nohighlight">\(c\)</span> is already lined up with one of the new required points.</p>
+<p>Use the method of golden section to find the minimum of the function in the previous problem with <span class="math notranslate nohighlight">\(\epsilon = 0.1\)</span>.</p>
+<p><strong>5.7</strong></p>
+<p>Consider the unconstrained problem:</p>
+<div class="math notranslate nohighlight">
+\[\text{minimize } f(x, y) = 3x^2 - 2xy + y^2 + 3e^{-x}\]</div>
+<p>Starting from the solution <span class="math notranslate nohighlight">\((x, y) = (0, 0)\)</span>, and an initial step length of 2, perform two iterations of the gradient search algorithm to find a minimum. That is, compute the gradient at the point <span class="math notranslate nohighlight">\((0, 0)\)</span>, and perform a one dimensional line search to find a minimum along the line. From this new point, perform a second line search.</p>
+<p><strong>5.8</strong></p>
+<p>Repeat Exercise 5.7, but use Newton’s method to find the solution.</p>
+<p><strong>5.9</strong></p>
+<p><em>Rosenbrock’s function</em> is a particularly difficult problem that looks deceptively simple. Consider the unconstrained function:</p>
+<div class="math notranslate nohighlight">
+\[\text{minimize } f(x, y) = 100 (y - x^2)^2 + (1 - x)^2\]</div>
+<p>The function has a unique minimum at the point <span class="math notranslate nohighlight">\((1, 1)\)</span> (where <span class="math notranslate nohighlight">\(f(1, 1) = 0\)</span>). This pathological example has also been called the <em>banana function</em>. If you plot the function, it follows a narrow banana-shaped valley from the point <span class="math notranslate nohighlight">\((-1, 1)\)</span> to the minimum <span class="math notranslate nohighlight">\((1, 1)\)</span>. Because the valley has quite steep sides, anytime an algorithm tries to follow the downward slope in a straight line, the line almost immediately starts going up, resulting in very short steps. It is very difficult for any algorithm to find the way around the banana.</p>
+<p>Try using both a gradient search and Newton’s method beginning at the point <span class="math notranslate nohighlight">\((-1, 1)\)</span>. Perform several iterations. You will likely observe rather poor progress along a narrow zig-zag path.</p>
+<p><strong>5.10</strong></p>
+<p>Consider the problem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{minimize} \quad &amp; f(x, y) = x^2y \\
+\text{subject to} \quad &amp;  x^2 + y^2 = 1 
+\end{align*}
+\end{split}\]</div>
+<p>Use the method of Lagrange multipliers to express this problem as an unconstrained minimization problem, and solve the problem using both the gradient method and Newton’s method.</p>
+<p><strong>5.11</strong></p>
+<p>Consider the following nonlinear problem with linear constraints:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{maximize} \quad &amp; f(x, y) = x^2y + 2y^2 \\
+\text{subject to} \quad &amp;  x + 3y \leq 9 \\  
+&amp; x + 2y \leq 8 \\
+&amp; 3x + 2y \leq 18 \\
+&amp; 0 \leq x \leq 5 \\
+&amp;  0 \leq y \leq 2
+\end{align*}
+\end{split}\]</div>
+<p>Solve this problem graphically. Begin at the point <span class="math notranslate nohighlight">\((0, 0)\)</span>, and check the gradient. If the Karush-Kuhn-Tucker conditions are not satisfied, you should be able to find an improving direction in the feasible region.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "MohammadBaniAbdElNabi/Nonlinear-optimization",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/5_6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Key_Terms.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Key Terms</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="References.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>References and Suggested Readings</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ghaith Rabadi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

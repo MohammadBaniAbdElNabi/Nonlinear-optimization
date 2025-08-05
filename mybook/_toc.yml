@@ -23,3 +23,18 @@ parts:
   - file: content/5_3/5_3_1.md
   - file: content/5_3/5_3_2.md
   - file: content/5_3/5_3_3.md
+  - file: content/5_3/5_3_4.md
+- caption: Section 5.4
+  chapters:
+  - file: content/5_4/5_4_0.md
+- caption: Section 5.5
+  chapters:
+  - file: content/5_5/5_5_1.md
+  - file: content/5_5/5_5_2.md
+  - file: content/5_5/5_5_3.md
+- caption: Section 5.6
+  chapters:
+  - file: content/5_6/5_6_0.md
+  - file: content/5_6/Key_Terms.md
+  - file: content/5_6/Exercises.md
+  - file: content/5_6/References.md

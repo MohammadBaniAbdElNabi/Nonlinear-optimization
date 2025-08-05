@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>References and Suggested Readings &#8212; Nonlinear optimization Chapter</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/5_6/References';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Exercises" href="Exercises.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Nonlinear optimization Chapter</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Online Book Guide
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_1/5_1_0.html"><strong>Nonlinear optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_1/5_1_1.html"><strong>Preliminary Notation and Concepts</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_0.html"><strong>Unconstrained Optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1.html"><strong>One-Dimensional Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_1_1.html"><strong>One-Dimensional Search Algorithm</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2.html"><strong>Multivariable Search: Gradient Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_2_1.html"><strong>Multivariable Gradient Search</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_3.html"><strong>Newton’s Method</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_2/5_2_4.html"><strong>Quasi-Newton Methods</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_0.html"><strong>Constrained Optimization</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_1.html"><strong>Lagrange Multipliers (Equality Constraints)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_2.html"><strong>Karush–Kuhn–Tucker Conditions (Inequality Constraints)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_3.html"><strong>Quadratic Programming</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_3/5_3_4.html"><strong>More Advanced Methods</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_4/5_4_0.html"><strong>Software for Nonlinear Optimization</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_1.html"><strong>Illustrative Applications</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_2.html"><strong>Portfolio Construction (Bertsimas et al. 1999)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_5/5_5_3.html"><strong>Balancing Rotor Systems (Chen et al. 1991)</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section 5.6</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="5_6_0.html"><strong>Summary</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Key_Terms.html"><strong>Key Terms</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exercises.html"><strong>Exercises</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>References and Suggested Readings</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/5_6/References.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>References and Suggested Readings</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="references-and-suggested-readings">
+<h1><strong>References and Suggested Readings</strong><a class="headerlink" href="#references-and-suggested-readings" title="Link to this heading">#</a></h1>
+<p>Avriel, M. 1976. Nonlinear Programming: Analysis and Methods. Englewood Cliffs, NJ: Prentice-Hall.<br></p>
+<p>Bazaraa, M. S., H. D. Sherali, and C. Shetty. 2013. Nonlinear Programming: Theory and Algorithms. New York: John Wiley &amp; Sons.<br></p>
+<p>Beale, E. M. L. 1959. On quadratic programming. Naval Research Logistics Quarterly 6 (3): 227–243.<br></p>
+<p>Beale, E. M. L. 1985. The evolution of mathematical programming systems. Operational Research Society 36 (5): 357–366.<br></p>
+<p>Beale, E. M. L. 1988. Introduction to Optimization. Chichester, UK: John Wiley &amp; Sons.<br></p>
+<p>Beale, E. M. L., G. C. Beare, and P. Bryan-Tatham. 1974. The DOAE Reinforcement and Redeployment Study: A Case Study in Mathematical Programming in Mathematical Programming in Theory and Practice. Amsterdam, the Netherlands: North-Holland <br></p>
+<p>Beck, A. 2015. Introduction to Nonlinear Optimization: Theory, Algorithms and Applications with MATLAB SIAM. New York: Society for Industrial &amp; Applied Mathematics.<br></p>
+<p>Beightler, C. S., D. T. Phillips, and D. J. Wilde. 1979. Foundations of Optimization, 2nd ed. Englewood Cliffs, NJ: Prentice-Hall.<br></p>
+<p>Beightler, C., and D. T. Phillips. 1976. Applied Geometric Programming. New York: Wiley.<br></p>
+<p>Bertsekas, D. P. 2015. Convex Optimization Algorithms. Belmont, MA: Athena Scientific.<br></p>
+<p>Bertsekas, D. P. 2016. Nonlinear Programming, 3rd ed. Belmont, MA: Athena Scientific.<br></p>
+<p>Bertsimas, D., C. Darnell, and R. Soucy. 1999. Portfolio construction through mixed-integer programming at Grantham. Interfaces 29 (1): 49–66.<br></p>
+<p>Broyden, C. G. 1970. The convergence of a class of double-rank minimization algorithms. 1. General considerations (pp. 76–90); 2. The new algorithm (pp. 222–231). Journal of the Institute of Mathematics and its Applications 6.<br></p>
+<p>Burley, D. M. 1974. Studies in Optimization. New York: John Wiley &amp; Sons.<br></p>
+<p>Chen, W. J., S. D. Rajan, H. D. Nelson, and M. Rajan. 1991. Application of nonlinear programming for balancing rotor systems. Engineering Optimisation 17: 79–90.<br></p>
+<p>Cheney, E. W., and D. Kincaid. 1980. Numerical Mathematics and Computing. Monterey, CA: Brooks/Cole.<br></p>
+<p>Davidon, W. C. 1959. Variable metric method for minimization. AEC Research &amp; Development Report ANL-5990 (Rev.) Lemont, IL: Argonne National Laboratory.<br></p>
+<p>Diwekar, U. 2010. Introduction to Applied Optimization. New York: Springer.<br></p>
+<p>Fletcher, R. 1970. A new approach to variable metric algorithms. The Computer Journal 13: 317–322.<br></p>
+<p>Fletcher, R. 1987. Practical Methods of Optimization, 2nd ed. Chichester, UK: John Wiley &amp; Sons.<br></p>
+<p>Fletcher, R., and M. J. D. Powell. 1963. A rapidly convergent descent method for minimization. The Computer Journal 6: 163–168.<br></p>
+<p>Floudas, C. A., and P. M. Pardalos (Eds.). 1992. Recent Advances in Global Optimization. Princeton, NJ: Princeton University Press.<br></p>
+<p>Fourer, R. 2017. Software survey: Linear programming. OR/MS Today 44 (3): 48–59.<br></p>
+<p>Fourer, R. 1998. Software for optimization: A survey of recent trends in mathematical programming systems. OR/MS Today 25 (6): 40–43.<br></p>
+<p>Gay, D. M. 1983. Subroutines for unconstrained minimization. ACM Transaction on Mathematical Software 9: 503–524.<br></p>
+<p>Gill, P. E., W. Murray, and M. H. Wright. 1981. Practical Optimization. New York: Academic Press.<br></p>
+<p>Gill, P. E., W. Murray, and M. H. Wright. 1984. Trends in nonlinear programming software. European Journal of Operational Research 17: 141–149.<br></p>
+<p>Goldfarb, D. 1969. Sufficient Conditions for the Convergence of a Variable-Metric Algorithm, in Optimization. London, UK: Academic Press.<br></p>
+<p>Hadley, G. 1974. Nonlinear and Dynamic Programming. Reading, MA: Addison-Wesley.<br></p>
+<p>Hooke, R., and T. A. Jeeves. 1961. Direct search solution of numerical and statistical problems. JACM 8: 212–229.<br></p>
+<p>Kuhn, H. W., and A. W. Tucker. 1951. Non-linear programming. Proceedings of the 2nd Berkeley Symposium on Mathematical Statistics and Probability. Berkeley, CA: University of California Press, Vol. 481–492.<br></p>
+<p>Lasdon, L. S., and A. D. Warren. 1978. Generalized reduced gradient software for linear and nonlinear constrained problems. In Greenberg (Ed.), Design and Implementation for Optimization Software. Alphen aan den Rijn, the Netherlands: Sijthoff/Noordhoff, pp. 363–397.<br></p>
+<p>Lemke, C. E. 1962. A method of solution for quadratic programs. Management Science 8 (4): 442–453.<br></p>
+<p>Liebman, J., L. Lasdon, L. Schrage, and A. Waren. 1986. Modeling and Optimization with GINO. Palo Alto, CA: The Scientific Press.<br></p>
+<p>Luenberger, D. G., and Y. Ye. 2008. Linear and Nonlinear Programming, 3rd ed., Vol. 116, International Series in Operations Research &amp; Management Science. New York: Springer.<br></p>
+<p>Markowitz, H. M. 1959. Portfolio Selection, Efficient Diversification of Investments. New York: John Wiley &amp; Sons.<br></p>
+<p>Markowitz, H. M. 1987. Mean-Variance Analysis in Portfolio Choice and Capital Markets. New York: Blackwell.<br></p>
+<p>McCormick, G. P. 1983. Nonlinear Programming: Theory, Algorithms and Applications. New York: John Wiley &amp; Sons.<br></p>
+<p>Moré, J. J., and S. J. Wright. 1993. Optimization Software Guide. Philadelphia, PA: Society for Industrial and Applied Mathematics.<br></p>
+<p>Murtagh, B. A., and M. A. Saunders. 1978. Large-scale linearly constrained optimization. Mathematical Programming 14: 41–72.<br></p>
+<p>Nash, S. G. 1998. Software survey: Nonlinear programming. OR/MS Today 25 (3): 36–45.<br></p>
+<p>Nash, S. G., and A. Sofer. 1996. Linear and Nonlinear Programming. New York: McGraw-Hill.<br></p>
+<p>Nelder, J. A., and R. Mead. 1965. A simplex method for function minimization. Computer Journal 7 (4): 308–313.<br></p>
+<p>Powell, M. J. D. 1964. An efficient method for finding the minimum of a function of several variables without calculating derivatives. Computer Journal 7: 155–162.<br></p>
+<p>Ravindran, A., and H. K. Lee. 1981. Computer experiments on quadratic programming algorithms. European Journal of Operational Research 8 (2): 166–174.<br></p>
+<p>Rigby, B., L. S. Lasdon, and A. D. Waren. 1995. The evolution of Texaco’s blending systems: From OMEGA to StarBlend. Interfaces 25 (5): 64–83.<br></p>
+<p>Rosenbrock, H. H. 1960. An automatic method for finding the greatest or least value of a function. Computer Journal 3: 175–184.<br></p>
+<p>Schrage, L. 1986. Linear, Integer and Quadratic Programming with LINDO. Palo Alto, CA: The Scientific Press.<br></p>
+<p>Shanno, D. F. 1970. Conditioning of Quasi-Newton methods for function minimization. Mathematics of Computation 24: 647–656.<br></p>
+<p>Sharpe, W. F. 1963. A simplified model for portfolio analysis. Management Science 9: 277–293.<br></p>
+<p>Simmons, D. M. 1975. Nonlinear Programming for Operations Research. Englewood Cliffs, NJ: Prentice-Hall.<br></p>
+<p>Wilde, D. J. 1964. Optimum Seeking Methods. Englewood Cliffs, NJ: Prentice-Hall.<br></p>
+<p>Wolfe, P. 1959. The simplex method for quadratic programming. Econometrica 27 (3): 382–398.<br></p>
+<p>Wolfe, P. 1967. Methods of Nonlinear Programming in Nonlinear Programming. Amsterdam, the Netherlands: North-Holland.<br></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "MohammadBaniAbdElNabi/Nonlinear-optimization",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/5_6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Exercises.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Exercises</strong></p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ghaith Rabadi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
