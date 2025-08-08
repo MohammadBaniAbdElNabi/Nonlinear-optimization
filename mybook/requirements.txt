@@ -1,7 +1,7 @@
 pyomo
 numpy
 matplotlib
-ipywidgets
+scipy
 jupyter-book
 ghp-import
 jupyterlab

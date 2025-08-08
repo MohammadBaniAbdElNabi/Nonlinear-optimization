@@ -6,7 +6,7 @@ parts:
   - file: setup  
 - caption: Section 5.1
   chapters:
-  - file: content/5_1/5_1_0.md
+  - file: content/5_1/5_1_0.ipynb
   - file: content/5_1/5_1_1.md
 - caption: Section 5.2
   chapters:
