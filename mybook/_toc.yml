@@ -36,5 +36,5 @@ parts:
   chapters:
   - file: content/5_6/5_6_0.md
   - file: content/5_6/Key_Terms.md
-  - file: content/5_6/Exercises.md
+  - file: content/5_6/Exercises.ipynb
   - file: content/5_6/References.md
